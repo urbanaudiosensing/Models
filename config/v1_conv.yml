@@ -1,0 +1,34 @@
+seed: 1265
+
+model_params:
+  #segment_length: 10
+  h_dim: 128
+  lr: 0.0005
+  nhead: 4
+  token_dim: 128
+  dropout: 0.2
+  nEncoders: 1
+  encoder: "conv-lite"
+  n_classes: 2
+
+data_params:
+  data_path: ["path_to/Session_5242023", "path_to/Session_6012023", 
+                "path_to/Session_6072023", "path_to/Session_6212023",
+                "path_to/Session_6282023"] #Change to your paths to each session
+  radius: 1
+  segment_length: 10
+  transform: "vggish-mel"
+
+dataloader_params:
+  batch_size: 256
+  num_workers: 6
+
+trainer_params:
+  max_epochs: 20
+  accelerator: "gpu"
+  devices: 1
+
+logging_params:
+  save_dir: "logger_runs/logs/"
+  name: "conv"
+  manifest_path: "logger_runs/manifest"
