@@ -5,6 +5,7 @@ logger_runs/*
 
 logger_runs/manifest/*
 !logger_runs/.gitkeep
+!logger_runs/manifest/.gitkeep
 
 #ignore pycache
 /pycache/*
